@@ -1,0 +1,8 @@
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# Local-only source dumps
+.ignore/
