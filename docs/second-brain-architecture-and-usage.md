@@ -107,19 +107,21 @@ From any project folder:
 capture <external-source-folder>
 ```
 
-The global capture-folder skill should copy the folder into:
+The global capture-folder skill should selectively copy text-like files from the folder into:
 
 ```text
 <knowledge-base-root>\raw\inbox\YYYY-MM-DD-folder-name\
 ```
 
-The capture step should not update `wiki/`, mark files as processed, or synthesize concepts. It should preserve raw sources and log capture-only status when appropriate.
+The capture step should not update `wiki/`, mark files as processed, or synthesize concepts. It should preserve readable raw sources, skip dependency folders/build outputs/caches/binaries by default, and log capture-only status when appropriate.
 
 The helper script supports dry runs:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File "<global-toolkit-root>\scripts\capture-folder.ps1" -SourcePath "<external-source-folder>" -DryRun
 ```
+
+See [Selective capture policy](selective-capture.md) for the exact default behavior and known gaps.
 
 ## Dream sequence workflow
 

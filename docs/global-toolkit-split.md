@@ -26,7 +26,7 @@ capture <external-source-folder>
 run dream sequence
 ```
 
-`capture <external-source-folder>` copies source material into the knowledge base under `raw/inbox/`.
+`capture <external-source-folder>` selectively copies text-like source material into the knowledge base under `raw/inbox/`.
 
 `run dream sequence` updates the knowledge base under `wiki/` and `outputs/`.
 
@@ -37,7 +37,7 @@ run dream sequence
 - `AGENTS.md` and `CLAUDE.md` moved out of the knowledge base.
 - Global skills and commands were installed for Claude discovery.
 - Knowledge-base documentation was updated to describe the data-plane/control-plane split.
-- The capture helper now supports a dry run and respects `SECOND_BRAIN_ROOT`.
+- The capture helper now supports a dry run, respects `SECOND_BRAIN_ROOT`, and skips build artifacts, caches, dependency folders, binaries, and oversized files by default.
 
 ## Remaining gaps
 
@@ -49,12 +49,13 @@ run dream sequence
 | Mobile/share capture is not configured | Jay demonstrates low-friction link sharing; this setup currently focuses on local folders. | Add a mobile/share inbox workflow when the capture surface is chosen. |
 | Public/private split needs ongoing hygiene | Raw capture manifests can contain local source paths in a private knowledge base. | Keep raw captures out of public commits; publish only sanitized scaffold/docs. |
 | Drift between toolkit and installed copies is possible | Updating `<global-toolkit-root>` does not automatically prove `<claude-config-root>` is current. | Add a sync script and verification check for installed skills/commands. |
+| Selective capture is heuristic | Uncommon text formats may be skipped and useful binary material such as PDFs or images is not extracted automatically. | Add configurable include/exclude policy and optional extraction/OCR workflows. |
 
 ## Verification checklist
 
 Use this checklist after changes to the split:
 
-- `capture <path> -DryRun` resolves to the knowledge-base `raw/inbox/`.
+- `capture <path> -DryRun` resolves to the knowledge-base `raw/inbox/` and reports captured/skipped counts.
 - The knowledge base does not contain local `.claude/`, scripts, `AGENTS.md`, or `CLAUDE.md`.
 - Global skills mention `SECOND_BRAIN_ROOT` and the default knowledge-base root.
 - Installed Claude skills mirror the global toolkit skills.

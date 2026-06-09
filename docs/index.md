@@ -1,4 +1,4 @@
-# AI Research Second Brain Docs
+# Second Brain Docs
 
 This vault is a local Markdown second brain for AI research. It captures raw sources, folds them into a wiki, lints the knowledge base, and produces outputs through agent-run workflows.
 
@@ -10,3 +10,4 @@ This vault is a local Markdown second brain for AI research. It captures raw sou
 |---|---|
 | [Architecture and usage guide](second-brain-architecture-and-usage.md) | System architecture, components, workflows, Jay transcript comparison, and current implementation gaps. |
 | [Global toolkit split](global-toolkit-split.md) | Latest data-plane/control-plane split, root resolution, and remaining gaps for future work. |
+| [Selective capture policy](selective-capture.md) | Default capture rules for text-like sources, skipped files, disk-usage behavior, and future gaps. |

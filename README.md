@@ -57,11 +57,13 @@ capture <external-source-folder>
 run dream sequence
 ```
 
-`capture <external-source-folder>` copies sources into:
+`capture <external-source-folder>` selectively copies text-like source files into:
 
 ```text
 <knowledge-base-root>\raw\inbox\YYYY-MM-DD-folder-name\
 ```
+
+By default, capture skips build artifacts, dependency folders, caches, binaries, and oversized files. A full mirror is available only through an explicit include-all option in the global toolkit.
 
 `run dream sequence` updates:
 
@@ -75,6 +77,7 @@ run dream sequence
 - [Architecture and usage guide](docs/second-brain-architecture-and-usage.md)
 - [Docs index](docs/index.md)
 - [Global toolkit split](docs/global-toolkit-split.md)
+- [Selective capture policy](docs/selective-capture.md)
 
 ## Development origin
 
