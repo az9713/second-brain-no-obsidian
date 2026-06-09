@@ -9,4 +9,4 @@ This vault is a local Markdown second brain for AI research. It captures raw sou
 | Section | What's inside |
 |---|---|
 | [Architecture and usage guide](second-brain-architecture-and-usage.md) | System architecture, components, workflows, Jay transcript comparison, and current implementation gaps. |
-
+| [Global toolkit split](global-toolkit-split.md) | Latest data-plane/control-plane split, root resolution, and remaining gaps for future work. |

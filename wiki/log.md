@@ -1,4 +1,4 @@
-﻿# Knowledge Base Log
+# Knowledge Base Log
 
 ## 2026-06-08 - scaffold and initial seed
 
@@ -31,3 +31,30 @@
 - Added `docs/second-brain-architecture-and-usage.md`.
 - Documented architecture, components, usage, Jay transcript comparison, differences, and remaining gaps.
 - Linked the guide from `README.md`.
+
+## 2026-06-08 - split global toolkit from knowledge base
+
+- Moved reusable operating files out of the knowledge base.
+- Knowledge base remains at `<knowledge-base-root>`.
+- Global toolkit now lives at `<global-toolkit-root>`.
+- Claude-discoverable skill and command copies are installed under `<claude-config-root>`.
+- Skills resolve `SECOND_BRAIN_ROOT` first, then default to `<knowledge-base-root>`.
+- Knowledge-base docs were updated to describe the data-plane/control-plane split.
+
+## 2026-06-08 - capture-folder
+
+- Captured external folder: `<external-source-folder>`
+- Destination batch: `raw/inbox/2026-06-08-draft-review-kit-every`
+- Contents: Katie Parrott "draft review kit" Every article (`raw_text.txt`) plus companion repo `draft-review-kit-main` (reviewer skills).
+- Files captured: 23
+- Status: capture-only; wiki synthesis deferred until dream sequence.
+
+## 2026-06-08 - dream sequence (draft-review-kit batch)
+
+- Processed captured batch `raw/inbox/2026-06-08-draft-review-kit-every/` (article + repo); raw files retained in inbox.
+- Created source pages: `wiki/sources/2026-06-08-katie-parrott-draft-review-kit-every.md`, `wiki/sources/2026-06-08-draft-review-kit-repo.md`.
+- Created concept pages: `wiki/concepts/review-skills.md`, `wiki/concepts/ai-writing-tells.md`, `wiki/concepts/reviewer-orchestration.md`, `wiki/concepts/after-automation.md`.
+- Updated `wiki/index.md` (new "AI-Assisted Writing" section + 3 query starting points), `wiki/processed.md`, `wiki/source_manifest.jsonl`.
+- Lint: 0 broken links (32 checked), 0 new contradictions (tensions recorded in concept pages), 0 duplicates/orphans, 2 stale-claim watch-items added.
+- Wrote dream report: `outputs/briefs/2026-06-08-dream-sequence.md`.
+

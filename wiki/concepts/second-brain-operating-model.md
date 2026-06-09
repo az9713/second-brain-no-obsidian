@@ -1,17 +1,54 @@
-﻿# Second-Brain Operating Model
+# Second-Brain Operating Model
 
 ## Summary
 
-This vault is a local AI research second brain. It keeps raw evidence separate from synthesized wiki knowledge and uses a dream sequence with lint as the maintenance loop.
+This second brain now separates durable knowledge from reusable agent operations.
 
-## Minimum Architecture
+## Data Plane
 
-- `CLAUDE.md`: concise operating manual.
+The knowledge base lives at:
+
+```text
+<knowledge-base-root>
+```
+
+It contains:
+
 - `raw/`: append-mostly source capture.
 - `wiki/`: source pages, concept pages, index, logs, registries, and lint state.
 - `outputs/`: generated briefs, memos, reports, and artifacts.
-- `.claude/skills/`: reusable workflow runbooks.
-- `.claude/commands/`: project slash-command wrappers.
+- `templates/`: reusable source, concept, and report templates.
+- `docs/`: documentation for this setup.
+
+## Control Plane
+
+The global toolkit lives at:
+
+```text
+<global-toolkit-root>
+```
+
+It contains:
+
+- `AGENTS.md`: cross-agent routing and root-resolution instructions.
+- `CLAUDE.md`: Claude Code-facing global second-brain instructions.
+- `.claude/skills/second-brain-*/SKILL.md`: reusable skills.
+- `.claude/commands/*.md`: short command wrappers.
+- `scripts/capture-folder.ps1`: capture-only folder intake helper.
+
+Claude-discoverable copies are installed under:
+
+```text
+<claude-config-root>\skills
+<claude-config-root>\commands
+```
+
+## Root Resolution
+
+Global skills resolve the knowledge-base root in this order:
+
+1. `SECOND_BRAIN_ROOT` environment variable.
+2. `<knowledge-base-root>`.
 
 ## Source-Backed Facts
 
@@ -21,11 +58,11 @@ This vault is a local AI research second brain. It keeps raw evidence separate f
 
 ## Local Implementation Choices
 
-- Root directory: `<second-brain-root>`.
 - Capture-only by default.
 - Manual dream sequence first; scheduling is deferred.
 - Git initialized for rollback, but commits require user approval.
 - Lint state is inspectable through dedicated Markdown files.
+- Skills and commands are global so future project folders can use the same second brain.
 
 ## Sources
 
@@ -35,3 +72,4 @@ This vault is a local AI research second brain. It keeps raw evidence separate f
 ## Last Updated
 
 2026-06-08
+
