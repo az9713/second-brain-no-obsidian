@@ -6,3 +6,5 @@ Thumbs.db
 
 # Local-only source dumps
 .ignore/
+raw/
+raw.archive-*/

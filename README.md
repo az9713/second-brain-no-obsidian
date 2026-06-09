@@ -6,7 +6,7 @@ This folder is the durable knowledge-base root for the local second-brain system
 <knowledge-base-root>
 ```
 
-It stores captured sources, synthesized wiki pages, lint state, and output artifacts. Reusable agent operations now live in the global toolkit at:
+It stores a linked source mount, synthesized wiki pages, lint state, and output artifacts. Reusable agent operations now live in the global toolkit at:
 
 ```text
 <global-toolkit-root>
@@ -23,7 +23,7 @@ Claude-discoverable copies of the global skills and commands are installed under
 
 | Path | Purpose |
 |---|---|
-| `raw/` | Append-mostly source capture layer. |
+| `raw/` | Local-only read-only source mount pointing at the user's projects/source tree. |
 | `wiki/` | Synthesized source pages, concept pages, registries, logs, and lint state. |
 | `outputs/` | Generated briefs, memos, reports, and other artifacts. |
 | `templates/` | Source, concept, and dream-report templates. |
@@ -57,13 +57,13 @@ capture <external-source-folder>
 run dream sequence
 ```
 
-`capture <external-source-folder>` selectively copies text-like source files into:
+`capture <external-source-folder>` registers text-like source files already available under:
 
 ```text
-<knowledge-base-root>\raw\inbox\YYYY-MM-DD-folder-name\
+<knowledge-base-root>\raw\
 ```
 
-By default, capture skips build artifacts, dependency folders, caches, binaries, and oversized files. A full mirror is available only through an explicit include-all option in the global toolkit.
+By default, capture skips build artifacts, dependency folders, caches, binaries, and oversized files. It writes metadata to `wiki/source_manifest.jsonl`; it does not copy source files.
 
 `run dream sequence` updates:
 

@@ -2,7 +2,7 @@
 
 This second brain is now split into a knowledge base and a global toolkit.
 
-The knowledge base stores durable state:
+The knowledge base stores durable state and a local-only raw source pointer:
 
 ```text
 <knowledge-base-root>
@@ -25,13 +25,13 @@ Claude-discoverable copies are installed under:
 
 The design is grounded in Jay's YouTube walkthrough of a Claude Code-maintained second brain. Jay describes five building blocks:
 
-1. `raw/` for captured source material.
+1. `raw/` for source material.
 2. `wiki/` for synthesized knowledge.
 3. `outputs/` for generated artifacts.
 4. An operating manual.
 5. A dream sequence that ingests sources and runs a lint sequence.
 
-This implementation keeps Jay's `raw/`, `wiki/`, and `outputs/` inside the knowledge base. The operating manual, skills, commands, and helper scripts now live globally so future projects can use the same second-brain workflows.
+This implementation keeps Jay's `raw/`, `wiki/`, and `outputs/` shape, but `raw/` is now a linked source mount instead of a copied inbox. The operating manual, skills, commands, and helper scripts live globally so future projects can use the same second-brain workflows.
 
 ## Mental model
 
@@ -39,7 +39,7 @@ The system has two planes:
 
 | Plane | Location | Responsibility |
 |---|---|---|
-| Data plane | `<knowledge-base-root>` | Raw captures, wiki, lint state, registries, logs, and outputs. |
+| Data plane | `<knowledge-base-root>` | Linked raw source pointer, wiki, lint state, registries, logs, and outputs. |
 | Control plane | `<global-toolkit-root>` | Global skills, commands, scripts, and agent routing. |
 
 The operating loop is unchanged:
@@ -51,7 +51,7 @@ capture -> synthesize -> lint -> repair -> query -> output
 From any future project folder, the user-facing workflow should remain:
 
 ```text
-capture <external-source-folder>
+capture <project-folder-name>
 run dream sequence
 ```
 
@@ -59,10 +59,7 @@ run dream sequence
 
 | Path | Purpose |
 |---|---|
-| `raw/` | Append-mostly evidence layer. |
-| `raw/inbox/` | Default destination for captured source batches. |
-| `raw/transcripts/` | Transcript captures. |
-| `raw/notes/` | Analysis notes and rough captures. |
+| `raw/` | Local-only read-only source mount pointing at the user's projects/source tree. |
 | `wiki/` | Synthesized source pages, concept pages, lint state, and registries. |
 | `wiki/index.md` | Query entrypoint. |
 | `wiki/log.md` | Append-only maintenance history. |
@@ -81,7 +78,7 @@ The knowledge base intentionally no longer contains `.claude/`, `scripts/`, `AGE
 | `CLAUDE.md` | Claude Code-facing global second-brain instructions. |
 | `.claude/skills/second-brain-*/SKILL.md` | Scoped reusable skills. |
 | `.claude/commands/*.md` | Short command wrappers. |
-| `scripts/capture-folder.ps1` | Helper for capture-only folder intake. |
+| `scripts/capture-folder.ps1` | Helper for register-only source scanning. |
 | `README.md` | Toolkit installation and usage notes. |
 
 Installed copies under `<claude-config-root>` make the skills and commands available beyond a single project folder.
@@ -104,16 +101,16 @@ This prevents project-local folders from becoming accidental second-brain destin
 From any project folder:
 
 ```text
-capture <external-source-folder>
+capture <project-folder-name>
 ```
 
-The global capture-folder skill should selectively copy text-like files from the folder into:
+The global capture-folder skill should register text-like files already available under:
 
 ```text
-<knowledge-base-root>\raw\inbox\YYYY-MM-DD-folder-name\
+<knowledge-base-root>\raw\
 ```
 
-The capture step should not update `wiki/`, mark files as processed, or synthesize concepts. It should preserve readable raw sources, skip dependency folders/build outputs/caches/binaries by default, and log capture-only status when appropriate.
+The capture step should not copy source files, update concept pages, mark files as processed, or synthesize concepts. It should scan readable raw sources, skip dependency folders/build outputs/caches/binaries by default, append metadata to `wiki/source_manifest.jsonl`, and log register-only status.
 
 The helper script supports dry runs:
 
@@ -121,7 +118,7 @@ The helper script supports dry runs:
 powershell -ExecutionPolicy Bypass -File "<global-toolkit-root>\scripts\capture-folder.ps1" -SourcePath "<external-source-folder>" -DryRun
 ```
 
-See [Selective capture policy](selective-capture.md) for the exact default behavior and known gaps.
+See [Linked raw registration policy](selective-capture.md) for the exact default behavior and known gaps.
 
 ## Dream sequence workflow
 
@@ -167,7 +164,7 @@ Jay's transcript mentions a lint sequence inside dream sequence. This implementa
 
 | Jay transcript | This implementation |
 |---|---|
-| `raw/`, `wiki/`, and `outputs/` live in one knowledge-base folder. | Same: these durable data folders live in `<knowledge-base-root>`. |
+| `raw/`, `wiki/`, and `outputs/` live in one knowledge-base folder. | Mostly same: `wiki/` and `outputs/` are durable KB folders; `raw/` is a local-only pointer to the user's projects/source tree. |
 | Operating manual guides Claude. | The operating manual is global: `<global-toolkit-root>\CLAUDE.md`, with installed skills/commands under `<claude-config-root>`. |
 | Dream sequence can be manual or scheduled. | Manual workflow is implemented; scheduling runbook exists but autonomous scheduling is not enabled by default. |
 | Lint checks contradictions, stale claims, duplicates, and orphans. | Lint is first-class and inspectable through `wiki/lint.md` and related ledgers. |
