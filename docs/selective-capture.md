@@ -24,6 +24,19 @@ For example, `capture example-project` resolves to:
 
 The user can also provide an explicit path if it resolves inside the raw source tree.
 
+## Folder lookup rule
+
+Capture folder lookup is exact and shallow.
+
+When the user gives a folder name, agents should check only:
+
+1. The explicit path, if the user provided one.
+2. `<knowledge-base-root>\raw\<folder-name>`.
+
+Agents should not recursively search the projects tree to find a capture folder. Recursive discovery across a large projects folder can walk dependency folders, build outputs, caches, and Git internals before the registration script even runs.
+
+If the exact folder is not found, the agent should stop and report that it was not found under `raw/`. If the user asks for suggestions, the agent may use a shallow top-level directory listing under `raw/`, but it must not descend into project folders.
+
 ## Default behavior
 
 The capture helper scans the source folder and builds a registration plan.
@@ -91,6 +104,7 @@ The dry run reports:
 - Files scanned.
 - Files that would be registered.
 - Files that would be skipped.
+- Directories that would be pruned.
 - Files that would be copied, always `0`.
 - Skip counts by reason.
 

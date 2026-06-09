@@ -28,6 +28,8 @@ run dream sequence
 
 `capture <project-folder-name>` registers text-like source material already visible under the linked `raw/` source tree. It writes metadata to `wiki/source_manifest.jsonl`; it does not copy source files.
 
+Folder lookup is exact and shallow: explicit path, then `raw/<project-folder-name>`. Agents should not run recursive filesystem searches to locate capture folders.
+
 `run dream sequence` updates the knowledge base under `wiki/` and `outputs/`.
 
 ## What changed
@@ -58,6 +60,7 @@ run dream sequence
 Use this checklist after changes to the split:
 
 - `capture <path> -DryRun` resolves to a source under linked `raw/` and reports registered/skipped counts with `Files copied: 0`.
+- Capture folder lookup uses exact path checks only and does not recurse through the projects tree to find a folder name.
 - The knowledge base does not contain local `.claude/`, scripts, `AGENTS.md`, or `CLAUDE.md`.
 - Global skills mention `SECOND_BRAIN_ROOT` and the default knowledge-base root.
 - Installed Claude skills mirror the global toolkit skills.

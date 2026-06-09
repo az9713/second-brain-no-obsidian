@@ -112,6 +112,8 @@ The global capture-folder skill should register text-like files already availabl
 
 The capture step should not copy source files, update concept pages, mark files as processed, or synthesize concepts. It should scan readable raw sources, skip dependency folders/build outputs/caches/binaries by default, append metadata to `wiki/source_manifest.jsonl`, and log register-only status.
 
+Folder lookup must be exact and shallow. When the user gives a folder name, agents should call the capture helper with that exact name and let it check `raw/<folder-name>`. They should not run recursive searches across the projects tree to locate the folder.
+
 The helper script supports dry runs:
 
 ```powershell
