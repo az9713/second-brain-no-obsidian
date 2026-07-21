@@ -58,3 +58,95 @@
 - Lint: 0 broken links (32 checked), 0 new contradictions (tensions recorded in concept pages), 0 duplicates/orphans, 2 stale-claim watch-items added.
 - Wrote dream report: `outputs/briefs/2026-06-08-dream-sequence.md`.
 
+
+## 2026-06-08 - capture-folder
+
+- Registered linked raw source: 
+aw/today_06082026
+- Source label: today_06082026
+- Registration run: 20260608-193548-today-06082026
+- Note: original auto-generated entry had corrupted PowerShell-template values ($sourceName, $runId, aw/); corrected during the today_06082026 dream sequence as a provenance-integrity fix.
+- Mode: linked_raw_register_text_like
+- Files scanned: 41
+- Files registered: 26
+- Files skipped: 15
+- Files copied: 0
+- Max file size: 2097152 bytes
+- Status: registered only; wiki synthesis deferred until dream sequence.
+
+
+## 2026-06-08 - dream sequence (today_06082026 batch)
+
+- Processed linked source `raw/today_06082026/` (26 registered files); raw left untouched in the user's projects folder.
+- Created 8 source pages: SemiAnalysis quadruped, Diamandis roundtable, Isenberg/Tabah AI-native, A Year of Claude Code, Nate Jones AI layoffs, All-In/Arora cybersecurity, Kantrowitz Apple WWDC, a16z/Benedict Evans coding.
+- Created 5 concept pages (each grounded in 2+ sources): `ai-stack-value-migration`, `ai-native-organization`, `verification-as-bottleneck`, `layoffs-as-strategy-signals`, `ai-capex-and-market-volatility`.
+- Updated `index.md` (new "AI Market & Operating Shifts" section + 8 sources + 5 query starting points), `processed.md` (8 rows), `source_manifest.jsonl` (26 records marked processed programmatically with per-file pages_touched).
+- Lint: 0 broken links (76 checked; 1 typo fixed mid-run), 1 new cross-source contradiction recorded (context-layer vs context-minimalism, C-2026-06-08-002, reconciliation proposed/unconfirmed), 0 duplicates (3 pairs checked, kept distinct), 0 orphans, 12 stale-claim watch-items (forecast-dense batch).
+- Provenance: source pages synthesize generated second-order summaries of auto-caption transcripts; flagged on each page; transcripts not published in this snapshot.
+- Corrected the corrupted prior capture-folder log entry as a provenance-integrity fix (noted above).
+- Wrote dream report: `outputs/briefs/2026-06-08-dream-sequence-today-06082026.md`.
+
+## 2026-06-08 - capture-folder
+
+- Registered linked raw source: `raw/graphify_obsidian_chase_ai`
+- Source label: `graphify_obsidian_chase_ai`
+- Registration run: `20260608-213340-graphify-obsidian-chase-ai`
+- Mode: linked_raw_register_text_like
+- Files scanned: 2
+- Files registered: 2
+- Files skipped: 0
+- Directories pruned: 0
+- Files copied: 0
+- Max file size: 2097152 bytes
+- Status: registered only; wiki synthesis deferred until dream sequence.
+
+## 2026-06-08 - dream-sequence
+
+- Processed linked raw source: `raw/graphify_obsidian_chase_ai`
+- Registered files processed: 2 (`transcript.txt`, `gpt5.5_summary.txt`)
+- Created source page: `wiki/sources/2026-06-08-chase-ai-graphify-obsidian.md`
+- Created concept page: `wiki/concepts/semantic-graph-import.md`
+- Updated concept pages: `llm-maintained-wiki`, `second-brain-operating-model`, `capture-vs-processing`
+- Updated maintenance files: `index.md`, `processed.md`, `source_manifest.jsonl`, lint state files, `open-threads.md`
+- Lint: 0 broken links, 0 new contradictions, 0 duplicate pages, 0 orphaned pages, 1 stale/product-workflow watch-item
+- Provenance: video transcript and generated summary claims treated as source claims; Graphify behavior not independently reproduced.
+- Wrote dream report: `outputs/briefs/2026-06-08-dream-sequence-graphify-obsidian.md`
+
+
+## 2026-06-09 - capture-folder
+
+- Registered linked raw source: `raw/_CORE/_claude_code/claude_subagents_herk__GOOD_ONE`
+- Source label: `claude_subagents_herk__GOOD_ONE`
+- Registration run: `20260609-063425-claude-subagents-herk-good-one`
+- Mode: linked_raw_register_text_like
+- Files scanned: 3
+- Files registered: 3
+- Files skipped: 0
+- Directories pruned: 0
+- Files copied: 0
+- Max file size: 2097152 bytes
+- Status: registered only; wiki synthesis deferred until dream sequence.
+
+## 2026-06-09 - capture-folder
+
+- Registered linked raw source: `raw/_CORE/_claude_code/claude_subagents_herk__GOOD_ONE`
+- Source label: `claude_subagents_herk__GOOD_ONE`
+- Registration run: `20260609-064602-claude-subagents-herk-good-one`
+- Mode: linked_raw_register_text_like
+- Files scanned: 3
+- Files registered: 3
+- Files skipped: 0
+- Directories pruned: 0
+- Files copied: 0
+- Max file size: 2097152 bytes
+- Status: registered only; wiki synthesis deferred until dream sequence.
+
+## 2026-07-21 - dream-sequence
+
+- Run type: reconciliation and integrity run (first run since 2026-06-08/09; ~6 weeks idle).
+- Raw ingestion: no new registered sources; herk subagents batch (3 files) reconciled - wiki pages existed since 2026-06-09 but manifest was never marked processed. Superseding processed records appended; double registration (runs 063425/064602) deduped.
+- Integrity check (new): `raw/today_06082026/` no longer resolves (26 records); `raw/inbox/2026-06-08-draft-review-kit-every/` paths now only in local archive (2 records). Recorded in lint.md; not resolved.
+- Lint: 40 pages checked; 0 broken wiki links; 0 orphans by inbound links; 2 pages missing from index repaired (herk source, subagent-orchestration concept).
+- Stale claims: both review windows flagged OVERDUE (due 2026-06-15 and 2026-07-08); not re-verified this run.
+- Encoding: UTF-8 BOMs stripped from 9 wiki files; mojibake dashes fixed.
+- Report: `outputs/briefs/2026-07-21-dream-sequence.md`.
