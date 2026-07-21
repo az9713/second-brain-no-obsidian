@@ -63,11 +63,13 @@ Global skills resolve the knowledge-base root in this order:
 - Git initialized for rollback, but commits require user approval.
 - Lint state is inspectable through dedicated Markdown files.
 - Skills and commands are global so future project folders can use the same second brain.
+- Graph-derived imports should be quarantined or selectively folded before promotion into durable wiki pages; see [Semantic Graph Import](semantic-graph-import.md).
 
 ## Sources
 
 - [Jay Second-Brain Video Transcript](../sources/2026-06-08-jay-second-brain-video.md)
 - [GPT 5.5 Jay Second-Brain Analysis](../sources/2026-06-08-gpt55-jay-second-brain-analysis.md)
+- [Chase AI - Graphify + Obsidian](../sources/2026-06-08-chase-ai-graphify-obsidian.md)
 
 ## Last Updated
 

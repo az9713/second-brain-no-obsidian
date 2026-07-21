@@ -21,12 +21,14 @@ This vault defaults to capture-only. The wiki is updated only when:
 
 Capture-only keeps source intake low-friction and reduces one-source over-synthesis. Batch processing gives the dream sequence a better chance to compare sources, detect contradictions, and fold knowledge into existing pages.
 
+Graphify-style exports make this distinction sharper: the generated Markdown graph may look like wiki content, but it is still processing output that needs quarantine, source wiring, and review before promotion into durable wiki pages.
+
 ## Sources
 
 - [Jay Second-Brain Video Transcript](../sources/2026-06-08-jay-second-brain-video.md)
 - [Contradictions](../contradictions.md)
+- [Semantic Graph Import](semantic-graph-import.md)
 
 ## Last Updated
 
 2026-06-08
-
