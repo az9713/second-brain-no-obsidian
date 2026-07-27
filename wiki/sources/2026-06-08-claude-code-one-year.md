@@ -3,7 +3,7 @@
 ## Metadata
 
 - Source type: YouTube transcript (auto-captions)
-- Evidence tier: generated-summary - an LLM summary of an auto-caption transcript; weakest tier, claims are paraphrases of paraphrases
+- Evidence tier: transcript - a transcript of the talk; content is first-hand but transcription-noisy and not independently verified
 - URL: https://www.youtube.com/watch?v=Hth_tLaC2j8
 - Channel: Claude
 - Duration: 18:07
@@ -13,7 +13,7 @@
 
 ## Summary
 
-Boris Cherny and Cat Wu review Claude Code's first year as a shift from a terminal coding assistant to an agentic work system used across engineering, product, design, data, finance, and operations. The center of gravity is not code generation but verification, routines, auto mode, loops, context minimalism, remote control, and organizational redesign around agents. The strongest idea: effective agent use compounds when every repeated mistake becomes durable context — a `CLAUDE.md` update, a skill, a routine, or another reusable instruction — moving from "tell the agent what to do" to "build systems where agents prompt agents, test themselves, monitor queues, and keep improving the process."
+Boris Cherny and Cat Wu review Claude Code's first year as a shift from a terminal coding assistant to an agentic work system used across engineering, product, design, data science, and finance. The center of gravity is not code generation but verification, routines, auto mode, loops, context minimalism, remote control, and organizational redesign around agents. The strongest idea: effective agent use compounds when every repeated mistake becomes durable context — a `CLAUDE.md` update, a skill, a routine, or another reusable instruction — moving from "tell the agent what to do" to "build systems where agents prompt agents, test themselves, monitor queues, and keep improving the process."
 
 ## Source-Backed Claims
 

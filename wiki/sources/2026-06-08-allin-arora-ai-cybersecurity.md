@@ -3,7 +3,7 @@
 ## Metadata
 
 - Source type: YouTube transcript (auto-captions)
-- Evidence tier: generated-summary - an LLM summary of an auto-caption transcript; weakest tier, claims are paraphrases of paraphrases
+- Evidence tier: transcript - a transcript of the talk; content is first-hand but transcription-noisy and not independently verified
 - URL: https://www.youtube.com/watch?v=hObRMv6qCi0
 - Channel: All-In Podcast (guest: Nikesh Arora)
 - Duration: 31:21

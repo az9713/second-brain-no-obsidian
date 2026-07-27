@@ -3,7 +3,7 @@
 ## Metadata
 
 - Source type: Newsletter article (public body before paywall)
-- Evidence tier: generated-summary - an LLM summary of an auto-caption transcript; weakest tier, claims are paraphrases of paraphrases
+- Evidence tier: primary - the original artifact itself was captured
 - URL: https://newsletter.semianalysis.com/p/quadruped-state-of-the-market-unitree
 - Publisher: SemiAnalysis
 - Publish date: 2025-10-20

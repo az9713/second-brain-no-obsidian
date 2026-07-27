@@ -9,12 +9,12 @@
 - Five layoff categories ([Nate B. Jones](../sources/2026-06-08-nate-jones-meta-ai-layoffs.md)): (1) capex reallocation, (2) visionary AI-native redesign, (3) activity-based performance cuts, (4) "hope layoffs" (AI invoked without metrics), (5) layoffs largely unrelated to AI.
 - Meta-style hyperscaler cuts can be about funding the AI capex race (GPUs, datacenters, frontier talent), not AI productivity already replacing thousands of workers ([Nate B. Jones](../sources/2026-06-08-nate-jones-meta-ai-layoffs.md)).
 - A credible AI-native layoff should come with a visible operating thesis: which workflows changed, which roles changed, which metrics improved ([Nate B. Jones](../sources/2026-06-08-nate-jones-meta-ai-layoffs.md)).
-- The Diamandis roundtable independently makes the same distinction, separating layoffs driven by capex tradeoffs, visionary redesign, productivity metrics, narrative/hope, and non-AI business problems ([Diamandis roundtable](../sources/2026-06-08-diamandis-takeoff-singularity.md)).
+- The Diamandis roundtable independently expects a wave of white-collar layoffs and frames them as driven by organizational redesign rather than cost-cutting — corroborating the redesign-vs-cost-cutting distinction, though it does not offer a taxonomy of its own ([Diamandis roundtable](../sources/2026-06-08-diamandis-takeoff-singularity.md)).
 - Both sources argue AI may *expand* employment around new bottlenecks even as some roles disappear ([Diamandis roundtable](../sources/2026-06-08-diamandis-takeoff-singularity.md)).
 
 ## Interpretation
 
-Two independent sources converging on the same five-way taxonomy is the strongest signal in this pairing. The shared claim is that a layoff is the loudest strategic message a company sends, and its information value depends entirely on correct classification — capex reallocation says "we are betting on infrastructure," a real redesign says "we changed how work happens," a hope layoff says "we have no thesis." This connects to [AI Capex and Market Volatility](ai-capex-and-market-volatility.md) (category 1 is a capital-allocation event) and to [AI-Native Organization](ai-native-organization.md) (category 2 is only credible when an actual operating model exists). It is interpretation/framework, not audited fact.
+The five-way taxonomy is Jones's alone; the Diamandis roundtable independently supports only its central redesign-vs-cost-cutting move, which corroborates the framework without duplicating it. The shared claim is that a layoff is the loudest strategic message a company sends, and its information value depends entirely on correct classification — capex reallocation says "we are betting on infrastructure," a real redesign says "we changed how work happens," a hope layoff says "we have no thesis." This connects to [AI Capex and Market Volatility](ai-capex-and-market-volatility.md) (category 1 is a capital-allocation event) and to [AI-Native Organization](ai-native-organization.md) (category 2 is only credible when an actual operating model exists). It is interpretation/framework, not audited fact.
 
 ## Contradictions or Tensions
 
@@ -27,7 +27,7 @@ Two independent sources converging on the same five-way taxonomy is the stronges
 
 ## Sources
 
-Evidence tier: **generated-summary** - inherited from the weakest underlying source. Claims here rest at least partly on LLM summaries of auto-caption transcripts; treat as leads, not verified facts.
+Evidence tier: **transcript** - inherited from the weakest underlying source. Claims rest on talk transcripts; first-hand but not independently verified.
 
 - [Meta Cut 8,000 People (Nate B. Jones)](../sources/2026-06-08-nate-jones-meta-ai-layoffs.md)
 - [Takeoff to Singularity (Diamandis roundtable)](../sources/2026-06-08-diamandis-takeoff-singularity.md)

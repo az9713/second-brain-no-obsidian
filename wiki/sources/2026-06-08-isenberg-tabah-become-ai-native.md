@@ -3,7 +3,7 @@
 ## Metadata
 
 - Source type: YouTube transcript (auto-captions)
-- Evidence tier: generated-summary - an LLM summary of an auto-caption transcript; weakest tier, claims are paraphrases of paraphrases
+- Evidence tier: transcript - a transcript of the talk; content is first-hand but transcription-noisy and not independently verified
 - URL: https://www.youtube.com/watch?v=LztPaNmcWGU
 - Channel: Greg Isenberg (with Theo Tabah)
 - Duration: 56:44
@@ -24,12 +24,12 @@ Greg Isenberg and Theo Tabah define an AI-native organization as one where peopl
 - Evals define what "good" means; without quality checks, speed creates noise rather than leverage.
 - Skills capture repeatable playbooks; skill chains combine playbooks into higher-order workflows.
 - The context layer is a loop: capture, curate, store, execute, experience — agents both retrieve from and update shared memory.
-- Speed matters because it converts ideas into customer signal quickly (a same-day prototype + usability test beats a static strategy memo).
+- Speed matters because it converts ideas into customer signal quickly (a prototype built in minutes, plus a live usability test, beats spending weeks writing a lengthy PRD).
 - Service businesses get more valuable by packaging the people+agents+context system for a niche.
 
 ## Limitations
 
-- This page synthesizes a **generated second-order summary** of an auto-caption transcript.
+- This page synthesizes claims from a first-hand auto-caption transcript; transcription noise (e.g. "Peter Teal" for Peter Thiel, "Commodore Amigga" for Commodore Amiga) may introduce minor errors.
 - The episode is demo-driven: examples show what is possible in a prepared workflow, not proof every company can adopt it immediately.
 - The context layer can become a liability if it captures stale, private, or low-quality information without curation.
 
