@@ -3,6 +3,7 @@
 ## Metadata
 
 - Source type: Code/skills repository (Claude Code + Codex plugin)
+- Evidence tier: primary - the original artifact itself was captured
 - URL or origin: https://github.com/EveryInc/draft-review-kit
 - Captured date: 2026-06-08
 - Raw files: `raw/inbox/2026-06-08-draft-review-kit-every/draft-review-kit-main/`

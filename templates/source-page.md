@@ -3,6 +3,7 @@
 ## Metadata
 
 - Source type:
+- Evidence tier: <!-- primary (original artifact captured) | transcript (talk transcript, not independently verified) | generated-summary (LLM summary of a transcript; weakest) -->
 - URL or origin:
 - Captured date:
 - Raw file:

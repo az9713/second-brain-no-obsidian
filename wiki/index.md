@@ -53,10 +53,9 @@
 - [Lint Report](lint.md)
 - [Contradictions](contradictions.md)
 - [Stale Claims](stale-claims.md)
-- [Duplicate Candidates](duplicate-candidates.md)
-- [Orphaned Pages](orphaned-pages.md)
-- [Broken Links](broken-links.md)
 - [Open Threads](open-threads.md)
+
+(Broken links, orphaned pages, and duplicate candidates were folded into the [Lint Report](lint.md) on 2026-07-27.)
 
 ## Query Starting Points
 

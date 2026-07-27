@@ -42,6 +42,8 @@ The orchestrator/specialist split is the Claude Code expression of a pattern thi
 
 ## Sources
 
+Evidence tier: **transcript** - inherited from the weakest underlying source. Claims rest on talk transcripts; first-hand but not independently verified.
+
 - [How to Build Claude Subagents Better Than 99% of People (Nate Herk)](../sources/2026-06-09-nate-herk-claude-subagents.md)
 
 ## Last Updated

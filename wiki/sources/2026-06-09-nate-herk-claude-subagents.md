@@ -3,6 +3,7 @@
 ## Metadata
 
 - Source type: YouTube transcript (auto-captions) + companion artifacts
+- Evidence tier: transcript - a transcript of the talk; content is first-hand but transcription-noisy and not independently verified
 - URL: https://www.youtube.com/watch?v=e18sdZLwP7o
 - Channel: Nate Herk
 - Duration: ~26:40

@@ -11,3 +11,4 @@ This vault is a local Markdown second brain for AI research. It captures raw sou
 | [Architecture and usage guide](second-brain-architecture-and-usage.md) | System architecture, components, workflows, Jay transcript comparison, and current implementation gaps. |
 | [Global toolkit split](global-toolkit-split.md) | Latest data-plane/control-plane split, root resolution, and remaining gaps for future work. |
 | [Linked raw registration policy](selective-capture.md) | Default registration rules for text-like sources, skipped files, disk-usage behavior, and future gaps. |
+| [Two-brain boundary policy](two-brain-boundary.md) | Which system is authoritative for what: this wiki (curated claims) vs the cerebras brain (bulk recall), routing rule and tiebreaker. |

@@ -1,3 +1,4 @@
+<!-- In the Sources section, state the inherited evidence tier: the WEAKEST tier among cited sources (primary > transcript > generated-summary). -->
 # Concept Title
 
 ## Summary

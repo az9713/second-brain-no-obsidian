@@ -31,15 +31,7 @@ Claude-discoverable copies of the global skills and commands are installed under
 
 ## What no longer lives here
 
-These reusable operating files were moved to the global toolkit:
-
-| Old local layer | New global location |
-|---|---|
-| `.claude/skills/` | `<global-toolkit-root>\.claude\skills\` and installed copies under `<claude-config-root>\skills\` |
-| `.claude/commands/` | `<global-toolkit-root>\.claude\commands\` and installed copies under `<claude-config-root>\commands\` |
-| `scripts/` | `<global-toolkit-root>\scripts\` |
-| `AGENTS.md` | `<global-toolkit-root>\AGENTS.md` |
-| `CLAUDE.md` | `<global-toolkit-root>\CLAUDE.md` |
+Reusable operating files (skills, commands, scripts, `AGENTS.md`, `CLAUDE.md`) were moved to the global toolkit; the full mapping is in [Global toolkit split](docs/global-toolkit-split.md).
 
 ## Root resolution
 
@@ -78,6 +70,7 @@ By default, capture skips build artifacts, dependency folders, caches, binaries,
 - [Docs index](docs/index.md)
 - [Global toolkit split](docs/global-toolkit-split.md)
 - [Selective capture policy](docs/selective-capture.md)
+- [Two-brain boundary policy](docs/two-brain-boundary.md)
 
 ## Development origin
 

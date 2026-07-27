@@ -67,6 +67,8 @@ Global skills resolve the knowledge-base root in this order:
 
 ## Sources
 
+Evidence tier: **generated-summary** - inherited from the weakest underlying source. Claims here rest at least partly on LLM summaries of auto-caption transcripts; treat as leads, not verified facts.
+
 - [Jay Second-Brain Video Transcript](../sources/2026-06-08-jay-second-brain-video.md)
 - [GPT 5.5 Jay Second-Brain Analysis](../sources/2026-06-08-gpt55-jay-second-brain-analysis.md)
 - [Chase AI - Graphify + Obsidian](../sources/2026-06-08-chase-ai-graphify-obsidian.md)

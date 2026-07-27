@@ -26,6 +26,8 @@ The thesis reframes the common "machine does more, human does less" bargain. The
 
 ## Sources
 
+Evidence tier: **primary** - inherited from the weakest underlying source. Grounded in captured original artifacts.
+
 - [Katie Parrott article](../sources/2026-06-08-katie-parrott-draft-review-kit-every.md)
 
 ## Last Updated

@@ -1,13 +1,15 @@
 # Processed Registry
 
+**`wiki/source_manifest.jsonl` is the machine-readable source of truth; this file is a human-readable view of it.** When they disagree, the manifest wins and this file gets corrected (consistency is enforced by the phase-0 invariant checker, `check-invariants.py`).
+
 This public snapshot intentionally excludes the raw grounding transcript and analysis files used during development.
 
 | Raw file | Processed date | Status | Wiki pages touched |
 |---|---:|---|---|
 | Jay second-brain video transcript | 2026-06-08 | source summarized; raw file excluded from public snapshot | `wiki/sources/2026-06-08-jay-second-brain-video.md`; `wiki/concepts/llm-maintained-wiki.md`; `wiki/concepts/dream-sequence.md`; `wiki/concepts/capture-vs-processing.md`; `wiki/concepts/second-brain-operating-model.md` |
 | GPT 5.5 Jay second-brain analysis | 2026-06-08 | source summarized; raw file excluded from public snapshot | `wiki/sources/2026-06-08-gpt55-jay-second-brain-analysis.md`; `wiki/concepts/knowledge-base-lint.md`; `wiki/concepts/dream-sequence.md`; `wiki/concepts/second-brain-operating-model.md` |
-| `raw/inbox/2026-06-08-draft-review-kit-every/raw_text.txt` (Katie Parrott Every article) | 2026-06-08 | processed; raw retained in inbox | `wiki/sources/2026-06-08-katie-parrott-draft-review-kit-every.md`; `wiki/concepts/review-skills.md`; `wiki/concepts/ai-writing-tells.md`; `wiki/concepts/reviewer-orchestration.md`; `wiki/concepts/after-automation.md` |
-| `raw/inbox/2026-06-08-draft-review-kit-every/draft-review-kit-main/` (Draft Review Kit repo) | 2026-06-08 | processed; raw retained in inbox | `wiki/sources/2026-06-08-draft-review-kit-repo.md`; `wiki/concepts/review-skills.md`; `wiki/concepts/ai-writing-tells.md`; `wiki/concepts/reviewer-orchestration.md` |
+| `raw.archive-20260608-184049/inbox/2026-06-08-draft-review-kit-every/raw_text.txt` (Katie Parrott Every article; path relinked 2026-07-27 to the KB-local archive snapshot) | 2026-06-08 | processed; raw retained in archive snapshot | `wiki/sources/2026-06-08-katie-parrott-draft-review-kit-every.md`; `wiki/concepts/review-skills.md`; `wiki/concepts/ai-writing-tells.md`; `wiki/concepts/reviewer-orchestration.md`; `wiki/concepts/after-automation.md` |
+| `raw.archive-20260608-184049/inbox/2026-06-08-draft-review-kit-every/draft-review-kit-main/` (Draft Review Kit repo; path relinked 2026-07-27 to the KB-local archive snapshot) | 2026-06-08 | processed; raw retained in archive snapshot | `wiki/sources/2026-06-08-draft-review-kit-repo.md`; `wiki/concepts/review-skills.md`; `wiki/concepts/ai-writing-tells.md`; `wiki/concepts/reviewer-orchestration.md` |
 | `raw/today_06082026/` (SemiAnalysis quadruped article + snapshot) | 2026-06-08 | processed; linked raw, not copied | `wiki/sources/2026-06-08-semianalysis-quadruped-market.md`; `wiki/concepts/ai-stack-value-migration.md` |
 | `raw/today_06082026/video_sources/P2HJEz3oqLs/` (Diamandis roundtable) | 2026-06-08 | processed; linked raw, not copied | `wiki/sources/2026-06-08-diamandis-takeoff-singularity.md`; `wiki/concepts/layoffs-as-strategy-signals.md`; `wiki/concepts/ai-capex-and-market-volatility.md` |
 | `raw/today_06082026/video_sources/LztPaNmcWGU/` (Become AI Native — Isenberg/Tabah) | 2026-06-08 | processed; linked raw, not copied | `wiki/sources/2026-06-08-isenberg-tabah-become-ai-native.md`; `wiki/concepts/ai-native-organization.md` |

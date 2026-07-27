@@ -27,9 +27,15 @@ Two independent sources converging on the same five-way taxonomy is the stronges
 
 ## Sources
 
+Evidence tier: **generated-summary** - inherited from the weakest underlying source. Claims here rest at least partly on LLM summaries of auto-caption transcripts; treat as leads, not verified facts.
+
 - [Meta Cut 8,000 People (Nate B. Jones)](../sources/2026-06-08-nate-jones-meta-ai-layoffs.md)
 - [Takeoff to Singularity (Diamandis roundtable)](../sources/2026-06-08-diamandis-takeoff-singularity.md)
 
+## Re-Verification (2026-07-27)
+
+Web pass supports the capex-reallocation reading of Meta's cut: reporting shows the restructuring freed $8-10B toward a $145B AI capex budget with non-AI teams hit hardest, and Zuckerberg conceded in July 2026 that Meta's AI "hasn't really accelerated" as expected - evidence against the AI-productivity-replacement interpretation. Details and links in [stale-claims](../stale-claims.md).
+
 ## Last Updated
 
-2026-06-08
+2026-07-27

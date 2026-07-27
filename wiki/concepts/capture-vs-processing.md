@@ -25,6 +25,8 @@ Graphify-style exports make this distinction sharper: the generated Markdown gra
 
 ## Sources
 
+Evidence tier: **transcript** - inherited from the weakest underlying source. Claims rest on talk transcripts; first-hand but not independently verified.
+
 - [Jay Second-Brain Video Transcript](../sources/2026-06-08-jay-second-brain-video.md)
 - [Contradictions](../contradictions.md)
 - [Semantic Graph Import](semantic-graph-import.md)

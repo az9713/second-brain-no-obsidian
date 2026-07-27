@@ -3,6 +3,7 @@
 ## Metadata
 
 - Source type: YouTube transcript (auto-captions)
+- Evidence tier: generated-summary - an LLM summary of an auto-caption transcript; weakest tier, claims are paraphrases of paraphrases
 - URL: https://www.youtube.com/watch?v=ain0OoBx74A
 - Channel: Alex Kantrowitz (with Ranjan Roy)
 - Duration: 56:05
@@ -28,6 +29,7 @@ Kantrowitz and Roy use expected WWDC announcements to ask whether Apple has fina
 
 - This page synthesizes a **generated second-order summary** of an auto-caption transcript with some garbled names (Mark Gurman, Gemini, Apple feature names).
 - The WWDC discussion is based on pre-event reporting and expectations, not a completed product review.
+- Post-event check (2026-07-27): the pre-event claims proved accurate - WWDC 2026 announced "Siri AI" powered by a custom Google Gemini model in Apple's data centers, and the Apple-Google partnership is official. The Microsoft/OpenAI shift also materialized as the April 2026 non-exclusive restructuring. See [stale-claims](../stale-claims.md).
 - Claims about Apple–Google arrangements, Anthropic's motives, IPO dynamics, and Microsoft/OpenAI strategy are speculative and should be independently verified.
 
 ## Related Pages

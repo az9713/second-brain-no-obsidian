@@ -27,6 +27,8 @@ The unifying mechanism: commoditization at layer N raises the relative value of 
 
 ## Sources
 
+Evidence tier: **generated-summary** - inherited from the weakest underlying source. Claims here rest at least partly on LLM summaries of auto-caption transcripts; treat as leads, not verified facts.
+
 - [SemiAnalysis quadruped market](../sources/2026-06-08-semianalysis-quadruped-market.md)
 - [a16z / Benedict Evans](../sources/2026-06-08-a16z-benedict-evans-coding.md)
 - [All-In / Nikesh Arora](../sources/2026-06-08-allin-arora-ai-cybersecurity.md)

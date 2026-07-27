@@ -3,6 +3,7 @@
 ## Metadata
 
 - Source type: YouTube transcript (auto-captions)
+- Evidence tier: generated-summary - an LLM summary of an auto-caption transcript; weakest tier, claims are paraphrases of paraphrases
 - URL: https://www.youtube.com/watch?v=LztPaNmcWGU
 - Channel: Greg Isenberg (with Theo Tabah)
 - Duration: 56:44

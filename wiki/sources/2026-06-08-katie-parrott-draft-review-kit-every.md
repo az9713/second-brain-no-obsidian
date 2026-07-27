@@ -3,6 +3,7 @@
 ## Metadata
 
 - Source type: Web article (Every, Working Overtime column)
+- Evidence tier: primary - the original artifact itself was captured
 - URL or origin: https://every.to/working-overtime/my-editor-caught-me-sounding-like-ai-now-ai-catches-me-first
 - Author: Katie Parrott (staff writer, Every)
 - Publication date: 2026-06-08

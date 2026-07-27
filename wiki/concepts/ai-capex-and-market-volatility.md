@@ -26,9 +26,15 @@ The two sources approach from opposite ends and meet in the middle: Diamandis ex
 
 ## Sources
 
+Evidence tier: **generated-summary** - inherited from the weakest underlying source. Claims here rest at least partly on LLM summaries of auto-caption transcripts; treat as leads, not verified facts.
+
 - [Takeoff to Singularity (Diamandis roundtable)](../sources/2026-06-08-diamandis-takeoff-singularity.md)
 - [a16z / Benedict Evans](../sources/2026-06-08-a16z-benedict-evans-coding.md)
 
+## Re-Verification (2026-07-27)
+
+The "crowded trade" claim held: BofA's July 2026 fund-manager survey found 82% naming semiconductors the most crowded trade with zero reported shorts, and analysts warn of 30-40% drawdowns as the cycle matures. Links in [stale-claims](../stale-claims.md).
+
 ## Last Updated
 
-2026-06-08
+2026-07-27

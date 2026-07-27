@@ -157,10 +157,9 @@ Jay's transcript mentions a lint sequence inside dream sequence. This implementa
 | `wiki/lint.md` | Latest lint summary. |
 | `wiki/contradictions.md` | Conflicting claims and resolutions. |
 | `wiki/stale-claims.md` | Claims needing refresh. |
-| `wiki/duplicate-candidates.md` | Potential duplicate pages or concepts. |
-| `wiki/orphaned-pages.md` | Pages not reachable through useful links. |
-| `wiki/broken-links.md` | Broken Markdown links. |
 | `wiki/open-threads.md` | Open maintenance and research questions. |
+
+Duplicate-candidate, orphaned-page, and broken-link tracking lives inside `wiki/lint.md` (separate files folded in 2026-07-27; a tracker gets its own file again only when it has open rows).
 
 ## Comparison with Jay's setup
 
@@ -168,7 +167,7 @@ Jay's transcript mentions a lint sequence inside dream sequence. This implementa
 |---|---|
 | `raw/`, `wiki/`, and `outputs/` live in one knowledge-base folder. | Mostly same: `wiki/` and `outputs/` are durable KB folders; `raw/` is a local-only pointer to the user's projects/source tree. |
 | Operating manual guides Claude. | The operating manual is global: `<global-toolkit-root>\CLAUDE.md`, with installed skills/commands under `<claude-config-root>`. |
-| Dream sequence can be manual or scheduled. | Manual workflow is implemented; scheduling runbook exists but autonomous scheduling is not enabled by default. |
+| Dream sequence can be manual or scheduled. | Both: manual workflow plus the `Claude-Dream-Sequence` Windows scheduled task (weekly, Mon 16:45, enabled 2026-07-21; runner: `<global-toolkit-root>\scripts\run-dream-sequence.ps1`). |
 | Lint checks contradictions, stale claims, duplicates, and orphans. | Lint is first-class and inspectable through `wiki/lint.md` and related ledgers. |
 | Claude creates and maintains the knowledge base. | Agents can use global skills from any project and still write to the same knowledge-base root. |
 
@@ -176,10 +175,14 @@ Jay's transcript mentions a lint sequence inside dream sequence. This implementa
 
 | Gap | Current status | Next step |
 |---|---|---|
-| Active scheduled dream sequence | Not enabled. | Approve cadence and execution surface. |
+| Active scheduled dream sequence | CLOSED 2026-07-27: weekly `Claude-Dream-Sequence` task enabled (Mon 16:45) with phase-0 invariant checker and no-new-content lint-only fast path. | Watch the first few scheduled runs' logs in `.ignore/dream-sequence-task.log`. |
 | Background folder watcher | Not implemented. | Keep using `capture <path>` or add a watched drop folder later. |
 | Mobile share flow | Not configured. | Add an inbox integration once a mobile capture surface is chosen. |
 | Automatic global Codex discovery | Not guaranteed by `AGENTS.md` alone. | Use global Claude skills/commands, or explicitly point Codex at `<global-toolkit-root>\AGENTS.md`. |
+
+## Retrieval scaling tripwire
+
+Retrieval is `wiki/index.md`-shaped and curated by hand. That beats RAG at the current size, but it is a property of ~40 pages, not of the architecture. Tripwire, checked during lint: when the wiki exceeds **100 pages** or `index.md` exceeds **150 lines**, or a `query-wiki` run misses a page that plainly should have matched, add the cheap intermediate first - per-topic hub pages and a one-line `Tags:` field on the templates. Embeddings/RAG are a later resort, only if hub pages measurably fail.
 
 ## Troubleshooting
 

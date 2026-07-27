@@ -28,6 +28,8 @@ Review skills externalize tacit editorial standards into inspectable, versionabl
 
 ## Sources
 
+Evidence tier: **primary** - inherited from the weakest underlying source. Grounded in captured original artifacts.
+
 - [Katie Parrott article](../sources/2026-06-08-katie-parrott-draft-review-kit-every.md)
 - [Draft Review Kit repo](../sources/2026-06-08-draft-review-kit-repo.md)
 

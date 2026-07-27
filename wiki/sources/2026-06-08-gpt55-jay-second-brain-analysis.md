@@ -3,6 +3,7 @@
 ## Metadata
 
 - Source type: analysis note
+- Evidence tier: generated-summary - an LLM summary of an auto-caption transcript; weakest tier, claims are paraphrases of paraphrases
 - Captured date: 2026-06-08
 - Raw file: excluded from this public snapshot.
 - Hash: retained in the private working copy, not published here.

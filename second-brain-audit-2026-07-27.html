@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Second-Brain Audit — 2026-07-27</title>
+<style>
+  :root {
+    --bg: #faf9f7; --fg: #1a1a1a; --muted: #6b6b6b; --card: #ffffff;
+    --border: #e2ded8; --accent: #8a5a00;
+    --crit: #b3261e; --crit-bg: #fdeceb;
+    --high: #b45309; --high-bg: #fdf3e3;
+    --med: #1d4ed8; --med-bg: #e9effd;
+    --low: #3f6212; --low-bg: #eef4e4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #191817; --fg: #e8e6e3; --muted: #9a968f; --card: #232120;
+      --border: #3a3733; --accent: #e0a94e;
+      --crit: #ff7a70; --crit-bg: #3a1f1d;
+      --high: #f0a24a; --high-bg: #38290f;
+      --med: #86a6f5; --med-bg: #1d2843;
+      --low: #a3c96a; --low-bg: #26301a;
+    }
+  }
+  html[data-theme="light"] {
+    --bg: #faf9f7; --fg: #1a1a1a; --muted: #6b6b6b; --card: #ffffff;
+    --border: #e2ded8; --accent: #8a5a00;
+    --crit: #b3261e; --crit-bg: #fdeceb;
+    --high: #b45309; --high-bg: #fdf3e3;
+    --med: #1d4ed8; --med-bg: #e9effd;
+    --low: #3f6212; --low-bg: #eef4e4;
+  }
+  html[data-theme="dark"] {
+    --bg: #191817; --fg: #e8e6e3; --muted: #9a968f; --card: #232120;
+    --border: #3a3733; --accent: #e0a94e;
+    --crit: #ff7a70; --crit-bg: #3a1f1d;
+    --high: #f0a24a; --high-bg: #38290f;
+    --med: #86a6f5; --med-bg: #1d2843;
+    --low: #a3c96a; --low-bg: #26301a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.6 Georgia, "Times New Roman", serif;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  header h1 { font-size: 1.9rem; margin: 0 0 .25rem; }
+  header p.sub { color: var(--muted); margin: 0 0 1rem; }
+  .thesis {
+    border-left: 4px solid var(--accent); background: var(--card);
+    padding: .9rem 1.1rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0;
+  }
+  .thesis strong { color: var(--accent); }
+  h2 { font-size: 1.35rem; margin: 2.5rem 0 .75rem; border-bottom: 1px solid var(--border); padding-bottom: .3rem; }
+  .tierlabel { display: inline-block; font-family: system-ui, sans-serif; font-size: .72rem; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase; padding: .15rem .55rem; border-radius: 999px; vertical-align: middle; }
+  .t-crit { color: var(--crit); background: var(--crit-bg); }
+  .t-high { color: var(--high); background: var(--high-bg); }
+  .t-med  { color: var(--med);  background: var(--med-bg); }
+  .t-low  { color: var(--low);  background: var(--low-bg); }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1rem 1.2rem; margin: .9rem 0;
+  }
+  .card.crit { border-left: 4px solid var(--crit); }
+  .card.high { border-left: 4px solid var(--high); }
+  .card.med  { border-left: 4px solid var(--med); }
+  .card.low  { border-left: 4px solid var(--low); }
+  .card h3 { margin: 0 0 .35rem; font-size: 1.08rem; }
+  .card h3 .num { color: var(--muted); font-weight: 400; }
+  .meta { font-family: system-ui, sans-serif; font-size: .74rem; color: var(--muted); margin-bottom: .5rem; }
+  .meta span { border: 1px solid var(--border); border-radius: 4px; padding: .05rem .4rem; margin-right: .35rem; }
+  .card p { margin: .45rem 0; }
+  .card .label { font-family: system-ui, sans-serif; font-size: .72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  code { font: .85em/1.4 Consolas, Menlo, monospace; background: var(--border); padding: .05em .3em; border-radius: 4px; }
+  .fix { border-top: 1px dashed var(--border); margin-top: .6rem; padding-top: .5rem; }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+  .scroll { overflow-x: auto; }
+  th, td { text-align: left; border-bottom: 1px solid var(--border); padding: .45rem .6rem; vertical-align: top; }
+  th { font-family: system-ui, sans-serif; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+  .warn { background: var(--high-bg); border: 1px solid var(--high); border-radius: 10px; padding: .9rem 1.1rem; margin: 1rem 0; }
+  .note { color: var(--muted); font-size: .9rem; font-style: italic; }
+  footer { margin-top: 3rem; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Second-Brain Audit &amp; Blindspot Report</h1>
+  <p class="sub">KB: <code>C:\Users\simon\Downloads\second-brain</code> · Toolkit: <code>C:\Users\simon\second-brain</code> · 2026-07-27 · <strong>No actions taken — findings only.</strong></p>
+</header>
+
+<div class="thesis">
+  <strong>Core thesis:</strong> the binding constraint is not capture or synthesis — both work. It is <strong>trust decay between runs</strong>. The system already demonstrated its dominant failure mode: it slept for six weeks (2026-06-09 → 2026-07-21), during which 28 of 41 provenance paths died, both stale-claim review deadlines blew past, and the manifest silently disagreed with the wiki. The wiki is only as trustworthy as its last dream sequence, and nothing triggers the next one.
+</div>
+
+<p>Sources for this report: a repo-wide complexity audit (ponytail) of all 57 tracked files, plus a blindspot pass grounded in <code>wiki/lint.md</code>, <code>outputs/briefs/2026-07-21-dream-sequence.md</code>, <code>wiki/source_manifest.jsonl</code>, the docs, and the dream-sequence skill. Measured state: 41 manifest records, 14 source pages, 16 concept pages, 7 git commits, last dream run 2026-07-21.</p>
+
+<!-- ============ CRITICAL ============ -->
+<h2><span class="tierlabel t-crit">Critical</span>&nbsp; Trust is actively decaying</h2>
+
+<div class="card crit">
+  <h3><span class="num">1.</span> The loop has no heartbeat</h3>
+  <div class="meta"><span>blindspot pass</span><span>temporal dynamics</span></div>
+  <p><span class="label">Finding</span> — Stale-claim review windows ("re-verify in 7 days / 30 days") are time-based promises, but nothing runs on time: the <code>schedule-dream-sequence</code> skill exists and is not enabled (<code>docs/second-brain-architecture-and-usage.md</code>, "Remaining gaps").</p>
+  <p><span class="label">Justification</span> — This is the root cause behind most other findings. Lint duties (stale review, provenance integrity) accrue with wall-clock time, not with new captures — a zero-capture week still creates work. The misconception "I'll run it when I capture something" is exactly how the six-week gap happened. Without a heartbeat, the system degrades into a static wiki with expired warranties.</p>
+  <p class="fix"><span class="label">Fix direction</span> — Enable a weekly scheduled dream sequence with a "no-new-content" fast path that runs only the lint phases, and define what it does when it finds overdue claims it cannot web-verify itself.</p>
+</div>
+
+<div class="card crit">
+  <h3><span class="num">2.</span> Provenance rot is structural, not an accident</h3>
+  <div class="meta"><span>blindspot pass</span><span>ponytail: delete</span><span>data lifecycle</span></div>
+  <p><span class="label">Finding</span> — <code>raw/</code> is a pointer into the living projects tree, not a copy. Any folder later moved or deleted kills provenance for already-processed knowledge. This has already happened to 68% of records: 26 manifest records point at <code>raw/today_06082026/</code> (deleted) and 2 more at a relocated inbox folder — 28 of 41 dead.</p>
+  <p><span class="label">Justification</span> — Provenance (a resolvable path from wiki claim back to raw file) is the one thing this design says it values over disk space. "Register-don't-copy is free" is false: it trades disk for provenance durability. At the churn rate of a working projects tree, every future batch will rot the same way. The decision (annotate as wiki-only vs. restore and re-register) has been pending since the 2026-07-21 dream report.</p>
+  <p class="fix"><span class="label">Fix direction</span> — Make the pending decision, prune or tombstone the 28 dead records. Longer term: content-addressed snapshot at capture time — copy only the registered text files (each &lt;2&nbsp;MB) into a hash-named KB-local store so provenance survives raw-tree churn.</p>
+</div>
+
+<div class="card crit">
+  <h3><span class="num">3.</span> No transactionality between ledgers</h3>
+  <div class="meta"><span>blindspot pass</span><span>integrity</span></div>
+  <p><span class="label">Finding</span> — Each dream run is a hand-executed multi-file transaction performed by an LLM across manifest, <code>processed.md</code>, index, trackers, and pages. Demonstrated failure: the herk batch's wiki pages were created 2026-06-09 while the manifest said unprocessed for six weeks, plus an accidental double registration (runs <code>063425</code>/<code>064602</code>).</p>
+  <p><span class="label">Justification</span> — LLM diligence approximates "usually consistent," not atomic. With no deterministic checker, the next skew will again be found by accident, months later. The ledger layer is the vault's differentiating asset; if it silently drifts, everything downstream inherits the drift.</p>
+  <p class="fix"><span class="label">Fix direction</span> — A scripted, non-LLM invariant checker as phase 0 of every dream run: every <code>processed</code> manifest record has a matching <code>processed.md</code> row and existing pages; every source page has a live manifest record; no duplicate registrations. Fail loudly.</p>
+</div>
+
+<div class="card crit">
+  <h3><span class="num">4.</span> Both stale-claim review windows are overdue</h3>
+  <div class="meta"><span>audit — correctness</span><span>epistemics</span></div>
+  <p><span class="label">Finding</span> — The 7-day market/finance claims (AI-capex positioning, Meta layoff motives, Microsoft/OpenAI relationship) were due 2026-06-15 — 6+ weeks overdue. The 30-day model-capability claims were due 2026-07-08 — ~3 weeks overdue (<code>wiki/stale-claims.md</code>).</p>
+  <p><span class="label">Justification</span> — The vault is currently presenting June market snapshots as knowledge. These are exactly the claims the staleness mechanism was built for, and re-verification is further complicated by finding #2: the underlying raw folder no longer resolves, so re-checks must work from wiki source pages plus fresh web sources.</p>
+  <p class="fix"><span class="label">Fix direction</span> — One web-verification pass: mark each claim confirmed / moved / falsified, update <code>stale-claims.md</code> and dependent concept pages.</p>
+</div>
+
+<div class="card crit">
+  <h3><span class="num">5.</span> <code>raw/</code> write-protection is a promise, not a mechanism</h3>
+  <div class="meta"><span>blindspot pass</span><span>security / enforcement</span></div>
+  <p><span class="label">Finding</span> — <code>docs/selective-capture.md</code> states it plainly: the junction into the projects tree "does not prevent writes at the OS level." Read-only is policy only.</p>
+  <p><span class="label">Justification</span> — Every dream run gives an LLM write tools in a repo containing a live pointer into your real projects. One bad tool call can modify or delete actual project files — damage outside the vault, not recoverable from the vault's git. Encoding repairs in July show the agent does rewrite many files per run; the blast radius just hasn't included <code>raw/</code> yet.</p>
+  <p class="fix"><span class="label">Fix direction</span> — Cheapest OS-level guard: an NTFS deny-write ACL on the junction target for the agent context, or a pre-write hook rejecting any path under <code>raw/</code>. Compare effort and failure modes; pick one.</p>
+</div>
+
+<!-- ============ HIGH ============ -->
+<h2><span class="tierlabel t-high">High</span>&nbsp; Unrecoverable-loss and quality risks</h2>
+
+<div class="card high">
+  <h3><span class="num">6.</span> The control plane (toolkit) is unversioned</h3>
+  <div class="meta"><span>blindspot pass</span><span>reproducibility</span></div>
+  <p><span class="label">Finding</span> — <code>C:\Users\simon\second-brain</code> (skills, <code>capture-folder.ps1</code>, commands) has no git. The July script fixes are unrecoverable if lost, and no past dream run can be reproduced against the rules that governed it.</p>
+  <p><span class="label">Justification</span> — This is a known-known the 2026-07-21 dream report already recommended (its recommendation 4) and that hasn't been acted on — which is its own blindspot category. Cost to fix is ~5 minutes; cost of loss is the entire operating logic of the system.</p>
+  <p class="fix"><span class="label">Fix direction</span> — <code>git init</code> the toolkit; record the toolkit commit hash in each dream report so every run is reproducible.</p>
+</div>
+
+<div class="card high">
+  <h3><span class="num">7.</span> Encoding corruption is a recurring platform hazard</h3>
+  <div class="meta"><span>blindspot pass</span><span>integrity</span></div>
+  <p><span class="label">Finding</span> — PowerShell 5.1 encoding traps already corrupted 9 wiki files (UTF-8 BOMs, mojibake em/en dashes), repaired in the 2026-07-21 run. Every dream run rewrites many files; lint has no encoding check.</p>
+  <p><span class="label">Justification</span> — This is a repeatable regression, not a one-off: the same platform trap fires on every <code>Set-Content</code>/<code>Out-File</code> write. The fix is already known in your memory files (<code>[IO.File]</code> with explicit BOM-less UTF-8) but is not encoded where it matters — the lint layer and the dream-sequence skill's safety rules.</p>
+  <p class="fix"><span class="label">Fix direction</span> — Scripted lint check across <code>wiki/</code>: no BOM, no mojibake byte sequences (<code>â€"</code>, <code>Â</code>), valid JSONL. Add the <code>[IO.File]</code> UTF-8 rule to the dream-sequence skill.</p>
+</div>
+
+<div class="card high">
+  <h3><span class="num">8.</span> Compounding on second-order sources with no evidence grading</h3>
+  <div class="meta"><span>blindspot pass</span><span>epistemics</span></div>
+  <p><span class="label">Finding</span> — Most of the corpus synthesizes <em>generated summaries of auto-caption transcripts</em>, not primary material — the lint notes say so explicitly. Source pages carry Limitations sections, but concept pages aggregate across sources and do not inherit any quality grade.</p>
+  <p><span class="label">Justification</span> — A concept "grounded in 2+ sources" may be grounded in two paraphrases of paraphrases. Confidence silently launders upward as claims move from source pages into concepts. You won't feel this until you act on one of those claims.</p>
+  <p class="fix"><span class="label">Fix direction</span> — Add an evidence-tier field (primary / transcript / generated-summary) to the source template; propagate the weakest tier into each concept page's claims; re-grade the 16 existing concepts.</p>
+</div>
+
+<div class="card high">
+  <h3><span class="num">9.</span> Two brains with overlapping mandates and no boundary</h3>
+  <div class="meta"><span>blindspot pass</span><span>ecosystem economics</span></div>
+  <p><span class="label">Finding</span> — This wiki and the cerebras brain (632k rows over <code>~/Downloads/projects</code> — the same tree <code>raw/</code> points at) both claim recall over your material; a <code>gbrain</code> MCP server with pages/links/jobs also exists. Nothing written decides which is authoritative for what, or where a new source goes.</p>
+  <p><span class="label">Justification</span> — "They're complementary" is the misconception: unmanaged overlap means double ingestion cost and contradictory answers with no tiebreaker — you'll trust whichever brain answered last. This should be settled before further investment in either.</p>
+  <p class="fix"><span class="label">Fix direction</span> — One-page boundary policy: wiki = curated synthesized claims with provenance and lint; cerebras brain = bulk recall. Define the routing rule for a new source, and whether dream reports feed the cerebras brain.</p>
+</div>
+
+<!-- ============ MEDIUM ============ -->
+<h2><span class="tierlabel t-med">Medium</span>&nbsp; Structural cleanups and silent-coverage gaps</h2>
+
+<div class="card med">
+  <h3><span class="num">10.</span> The skip ledger defines what the brain can never know — nothing audits it</h3>
+  <div class="meta"><span>blindspot pass</span><span>coverage</span></div>
+  <p><span class="label">Finding</span> — Capture's allowlist, 2&nbsp;MB cap, and binary/PDF skips silently shape the corpus. <code>.vtt</code> transcripts were invisible until noticed and fixed 2026-07-21. <code>wiki/source_scan_skipped.jsonl</code> records every skip, but no phase reads it. Broader: the raw mount lists hundreds of project folders; 41 files are registered — the brain's coverage of your actual work is a rounding error.</p>
+  <p><span class="label">Justification</span> — The <code>.vtt</code> bug is one instance of a general pattern: exclusion rules fail silently, and near-zero coverage is fine only if it's a deliberate choice rather than an accident of defaults.</p>
+  <p class="fix"><span class="label">Fix direction</span> — Lint sub-check aggregating the skip ledger by reason and extension, surfacing top <code>unknown_extension</code> patterns. Separately: list the top 10 raw folders by recency and flag which are uncaptured.</p>
+</div>
+
+<div class="card med">
+  <h3><span class="num">11.</span> Duplicate registries: <code>processed.md</code> vs <code>source_manifest.jsonl</code></h3>
+  <div class="meta"><span>ponytail: yagni</span></div>
+  <p><span class="label">Finding</span> — Two registries track the same processed-state: a hand-maintained markdown table and a JSONL manifest. The 2026-07-21 run had to reconcile them because they drifted.</p>
+  <p><span class="label">Justification</span> — Two sources of truth for one fact guarantees skew (this is the symptom of finding #3). Keep the JSONL as truth; <code>processed.md</code> becomes a generated view or is deleted.</p>
+</div>
+
+<div class="card med">
+  <h3><span class="num">12.</span> Dead rows in <code>source_manifest.jsonl</code></h3>
+  <div class="meta"><span>ponytail: delete</span></div>
+  <p><span class="label">Finding</span> — The 26+2 dead-provenance records (see #2) remain in the manifest alongside prose in <code>lint.md</code> explaining they're dead.</p>
+  <p><span class="label">Justification</span> — Carrying both the dead rows and the explanation is the worst of both worlds. Once the #2 decision is made: prune with one tombstone note, or restore and re-register. ~26 lines.</p>
+</div>
+
+<div class="card med">
+  <h3><span class="num">13.</span> <code>source_scan_skipped.jsonl</code> is entirely dead</h3>
+  <div class="meta"><span>ponytail: delete</span></div>
+  <p><span class="label">Finding</span> — All 15 skip records reference the deleted <code>today_06082026</code> folder.</p>
+  <p><span class="label">Justification</span> — A skip-log for files that no longer exist serves nobody. (Note the tension with #10: the ledger is worth keeping as a mechanism — for future batches — but these particular rows are dead. ~15 lines.)</p>
+</div>
+
+<!-- ============ LOW ============ -->
+<h2><span class="tierlabel t-low">Low</span>&nbsp; Line-count trims and future tripwires</h2>
+
+<div class="card low">
+  <h3><span class="num">14.</span> Retrieval is <code>index.md</code>-shaped — fine at 40 pages, unexamined beyond</h3>
+  <div class="meta"><span>blindspot pass</span><span>retrieval scaling</span></div>
+  <p><span class="label">Finding</span> — "Avoids Obsidian, vector databases, heavy RAG" reads as permanent identity, but it's a property of the current size. No policy for when index sections split, no backlink discipline, no retrieval-quality test.</p>
+  <p><span class="label">Justification</span> — "No RAG needed" is a fact about 40 pages, not about the architecture. Low severity now — becomes real only with growth, and #10 shows growth is currently minimal.</p>
+  <p class="fix"><span class="label">Fix direction</span> — Define the scaling tripwire (page count / index length at which query-wiki starts missing pages) and the cheap intermediate: per-topic hub pages, tag lines on templates — long before embeddings.</p>
+</div>
+
+<div class="card low">
+  <h3><span class="num">15.</span> Five standing tracker files, three currently empty</h3>
+  <div class="meta"><span>ponytail: yagni</span></div>
+  <p><span class="label">Finding</span> — <code>broken-links.md</code>, <code>orphaned-pages.md</code>, <code>duplicate-candidates.md</code> each say "nothing found" above an empty (or fully-resolved) table.</p>
+  <p><span class="label">Justification</span> — One "Integrity" section in <code>lint.md</code> covers the empty ones; a tracker earns its own file when it has rows. ~60 lines, 3 files. Caveat: requires a matching one-line edit in the dream-sequence skill, which writes to these files.</p>
+</div>
+
+<div class="card low">
+  <h3><span class="num">16.</span> <code>wiki/log.md</code> hand-duplicates git history</h3>
+  <div class="meta"><span>ponytail: native</span></div>
+  <p><span class="label">Finding</span> — 152 lines re-recording what commits record, in a repo the log itself says was git-initialized "for rollback."</p>
+  <p><span class="label">Justification</span> — <code>git log</code> is the log. Keep only entries with narrative git can't hold.</p>
+</div>
+
+<div class="card low">
+  <h3><span class="num">17.</span> README migration table duplicates <code>docs/global-toolkit-split.md</code></h3>
+  <div class="meta"><span>ponytail: shrink</span></div>
+  <p><span class="label">Finding</span> — README's "What no longer lives here" table restates the toolkit-split doc.</p>
+  <p><span class="label">Justification</span> — Migrations are one-time events; a single pointer line suffices. ~30 lines.</p>
+</div>
+
+<!-- ============ PLAN ============ -->
+<h2>Recommended order of attack</h2>
+<div class="scroll">
+<table>
+  <tr><th>#</th><th>Move</th><th>Resolves</th><th>Why this order</th></tr>
+  <tr><td>1</td><td>Scripted invariant checker (phase 0 of dream runs)</td><td>#3, guards #11</td><td>Converts recurring ledger surprises into caught errors before anything else is trusted.</td></tr>
+  <tr><td>2</td><td>Weekly scheduled dream sequence, no-content fast path</td><td>#1, prevents #4 recurring</td><td>The single change that fixes the demonstrated six-week failure mode.</td></tr>
+  <tr><td>3</td><td>Provenance decision (annotate vs. restore), then prune; consider capture-time snapshots</td><td>#2, #12, #13</td><td>Already the open question your own 2026-07-21 dream report asked you to decide.</td></tr>
+  <tr><td>4</td><td><code>git init</code> the toolkit, hash-stamp dream reports</td><td>#6</td><td>Five minutes; closes an unrecoverable-loss window.</td></tr>
+  <tr><td>5</td><td>Two-brain boundary policy (one page)</td><td>#9</td><td>Prevents strategic effort-splitting before further investment in either brain.</td></tr>
+  <tr><td>6</td><td>Stale-claims web pass; evidence tiers; encoding lint; skip-ledger audit; raw/ write guard</td><td>#4, #5, #7, #8, #10</td><td>Each worthwhile once the loop is beating on its own.</td></tr>
+  <tr><td>7</td><td>Ponytail trims (#15–17) when next touching those files</td><td>#15, #16, #17</td><td>~300 lines total; not urgent, just cheaper to do alongside other edits.</td></tr>
+</table>
+</div>
+
+<div class="warn">
+  <strong>Rat-hole warning:</strong> do not start with the folder watcher, mobile capture, graph visualization, embeddings, or the Graphify import quarantine — all listed as tempting "remaining gaps" in the docs, all capacity-expanding features bolted onto a loop that currently doesn't run on its own. The dominant game: <em>keep the loop beating → keep the ledgers truthful → keep provenance alive → then grow capture.</em>
+</div>
+
+<p><strong>Acceptance test that the blindspots are closed:</strong> a month passes with zero manual intervention, and <code>wiki/lint.md</code> shows no overdue windows, no ledger skew, and no new dead provenance you didn't already decide about.</p>
+
+<footer>
+  Generated 2026-07-27 from a ponytail repo-wide audit (57 tracked files) + blindspot pass. No repository files were modified. Sources: <code>wiki/lint.md</code>, <code>wiki/stale-claims.md</code>, <code>wiki/processed.md</code>, <code>wiki/source_manifest.jsonl</code>, <code>wiki/source_scan_skipped.jsonl</code>, <code>outputs/briefs/2026-07-21-dream-sequence.md</code>, <code>docs/*</code>, <code>README.md</code>.
+</footer>
+
+</div>
+</body>
+</html>

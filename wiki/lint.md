@@ -13,7 +13,11 @@
 - Contradictions found: 0 new.
 - Duplicate candidates found: 0 new.
 
-## Raw Provenance Integrity (2026-07-21 run) - ACTION NEEDED
+## Raw Provenance Integrity - RESOLVED 2026-07-27
+
+The 2026-07-21 findings below are resolved. `raw/today_06082026/` had not been deleted - it was moved to `raw/today_MMDDYYYY_brain_dump/today_06082026/` in the projects tree. All 26 manifest records were relinked to the new path and 27 files re-verified against their stored sha256 hashes (all match). The 2 draft-review-kit inbox records were relinked to the KB-local `raw.archive-20260608-184049/inbox/` snapshot. Current dead-provenance count: 0 of 35 effective records, confirmed by the new deterministic checker (`C:/Users/simon/second-brain/scripts/check-invariants.py`), which now guards this as a standing invariant.
+
+## Raw Provenance Integrity (2026-07-21 run) - superseded, kept for history
 
 First integrity check of manifest paths against the linked `raw/` tree:
 
@@ -26,6 +30,31 @@ First integrity check of manifest paths against the linked `raw/` tree:
 Recorded, not resolved, per policy. Options for the user: (a) accept that the today_06082026 batch is now wiki-only knowledge with dead provenance links, and annotate the affected source pages; (b) restore or re-link the folder and re-register. Encoding hygiene was also repaired this run: UTF-8 BOMs stripped from 9 wiki files and mojibake em/en dashes fixed (PowerShell 5.1 Set-Content/Out-File encoding trap - future writes should use BOM-less UTF-8).
 
 ---
+
+## Integrity Trackers (folded in 2026-07-27)
+
+The separate `broken-links.md`, `orphaned-pages.md`, and `duplicate-candidates.md` files were consolidated here (user-approved deletion; they held only "nothing found" status). A tracker earns its own file again when it accumulates open rows. `contradictions.md` and `stale-claims.md` remain separate - they have content.
+
+### Broken links
+
+None as of 2026-07-27; enforced every run by the phase-0 checker's link scan.
+
+### Orphaned pages
+
+None. All pages are linked from `index.md` (last repaired 2026-07-21); the checker verifies every source page is claimed by a manifest record.
+
+### Duplicate candidates
+
+No duplicate pages. Four candidate pairs checked and deliberately kept distinct:
+
+| Page A | Page B | Resolution |
+|---|---|---|
+| `concepts/ai-native-organization.md` | `concepts/second-brain-operating-model.md` | Kept distinct - general multi-source org model vs this vault's policy; cross-linked |
+| `concepts/verification-as-bottleneck.md` | `concepts/knowledge-base-lint.md` | Kept distinct - cross-source concept vs vault-specific instance; cross-linked |
+| `concepts/ai-stack-value-migration.md` | `concepts/reviewer-orchestration.md` | Kept distinct - different domains; value-migration cites reviewer-orchestration as example |
+| `concepts/semantic-graph-import.md` | `concepts/llm-maintained-wiki.md` / `second-brain-operating-model.md` | Kept distinct - ingestion pattern vs compiled memory vs local policy |
+
+Policy: do not merge pages without explicit user approval.
 
 ## Previous Run
 
@@ -113,15 +142,15 @@ See [stale-claims.md](stale-claims.md). Two watch-items added for the Draft Revi
 
 ## Duplicate Candidates
 
-See [duplicate-candidates.md](duplicate-candidates.md). `review-skills` and `ai-writing-tells` were checked for overlap; kept separate (one is the mechanism, one is the catalog of what it catches).
+`review-skills` and `ai-writing-tells` were checked for overlap; kept separate (one is the mechanism, one is the catalog of what it catches). (Tracker file folded into this report 2026-07-27.)
 
 ## Orphaned Pages
 
-See [orphaned-pages.md](orphaned-pages.md). All 6 new pages are linked from `wiki/index.md` and cross-link each other.
+All 6 new pages are linked from `wiki/index.md` and cross-link each other. (Tracker file folded into this report 2026-07-27.)
 
 ## Broken Links
 
-See [broken-links.md](broken-links.md). All 32 internal links in the new pages were verified to resolve.
+All 32 internal links in the new pages were verified to resolve. (Tracker file folded into this report 2026-07-27.)
 
 ## Missing Provenance
 

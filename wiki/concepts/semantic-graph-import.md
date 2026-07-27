@@ -29,6 +29,8 @@ This pattern also clarifies a difference between a Markdown wiki and a knowledge
 
 ## Sources
 
+Evidence tier: **transcript** - inherited from the weakest underlying source. Claims rest on talk transcripts; first-hand but not independently verified.
+
 - [Chase AI - Graphify + Obsidian](../sources/2026-06-08-chase-ai-graphify-obsidian.md)
 
 ## Last Updated

@@ -3,6 +3,7 @@
 ## Metadata
 
 - Source type: YouTube transcript plus generated summary
+- Evidence tier: transcript - a transcript of the talk; content is first-hand but transcription-noisy and not independently verified
 - URL or origin: https://www.youtube.com/watch?v=mWLDn49_8HA&t=6s
 - Captured date: 2026-06-08
 - Raw files:

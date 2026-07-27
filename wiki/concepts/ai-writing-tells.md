@@ -25,6 +25,8 @@ The list is partly universal (model habits) and partly personal (author tics)—
 
 ## Sources
 
+Evidence tier: **primary** - inherited from the weakest underlying source. Grounded in captured original artifacts.
+
 - [Katie Parrott article](../sources/2026-06-08-katie-parrott-draft-review-kit-every.md)
 - [Draft Review Kit repo](../sources/2026-06-08-draft-review-kit-repo.md)
 - [Review Skills](review-skills.md)

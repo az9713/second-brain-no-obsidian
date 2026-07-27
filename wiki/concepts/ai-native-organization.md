@@ -29,6 +29,8 @@ The three sources describe the same shape from different vantage points: a servi
 
 ## Sources
 
+Evidence tier: **generated-summary** - inherited from the weakest underlying source. Claims here rest at least partly on LLM summaries of auto-caption transcripts; treat as leads, not verified facts.
+
 - [Become AI Native (Isenberg / Tabah)](../sources/2026-06-08-isenberg-tabah-become-ai-native.md)
 - [Reflecting on a Year of Claude Code](../sources/2026-06-08-claude-code-one-year.md)
 - [All-In / Nikesh Arora](../sources/2026-06-08-allin-arora-ai-cybersecurity.md)
